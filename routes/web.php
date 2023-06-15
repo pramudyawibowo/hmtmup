@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('guest.home');
-});
+})->name('home');
 
-Route::get('login', function () {
-    return view('guest.auth.login');
-});
+Auth::routes(['register' => false, 'reset' => false]);
