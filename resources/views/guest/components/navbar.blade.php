@@ -38,7 +38,23 @@
         </ul>
     </div>
     <div class="navbar-end">
-        <a class="btn btn-xs bg-transparent border-base-100 rounded-full mr-2 sm:btn-sm md:btn-md lg:btn-lg" href="{{ route('login') }}">Log In</a>
+        @auth
+            <a class="btn btn-xs bg-transparent border-base-100 rounded-full mr-2 sm:btn-sm md:btn-md lg:btn-lg" id="logoutBtn">Log out</a>
+            <form action="{{ route('logout') }}" method="POST" id="logout">
+                @csrf
+            </form>
+        @else
+            <a class="btn btn-xs bg-transparent border-base-100 rounded-full mr-2 sm:btn-sm md:btn-md lg:btn-lg" href="{{ route('login') }}">Log In</a>
+        @endauth
     </div>
 </div>
 <!-- Navbar -->
+
+@push('js')
+    <script>
+        $('#logoutBtn').on('click', function(e) {
+            e.preventDefault();
+            $('#logout').submit();
+        })
+    </script>
+@endpush

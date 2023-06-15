@@ -7,13 +7,21 @@
                 <img src="{{ asset('assets/hmtm.png') }}" alt="HMTM" />
             </figure>
             <div class="card-body flex justify-between">
-                <p>NIM</p>
-                <input type="text" placeholder="NIM" class="input border-neutral-300 w-full max-w-sm" name="nim"/>
-                <p>PASSWORD</p>
-                <input type="password" placeholder="Password" class="input border-neutral-300 w-full max-w-sm" name="password" />
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Log In</button>
-                </div>
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <p>NIM</p>
+                    <input type="text" placeholder="NIM" class="input border-neutral-300 w-full max-w-sm" name="email" value="{{ old('nim') }}" required autofocus/>
+                    <p>PASSWORD</p>
+                    <input type="password" placeholder="Password" class="input border-neutral-300 w-full max-w-sm" name="password" />
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary" type="submit">Log In</button>
+                    </div>
+                </form>
+                @auth
+                    Test AUTH
+                @else
+                    Belum auth
+                @endauth
             </div>
         </div>
     </div>

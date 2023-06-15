@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('guest.home');
 })->name('home');
 
+Route::get('home', function () {
+    return view('guest.home');
+})->name('home');
+
 Auth::routes(['register' => false, 'reset' => false]);

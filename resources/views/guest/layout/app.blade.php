@@ -18,4 +18,8 @@
     @include('guest.components.footer')
 </body>
 
+<script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+
+@stack('js')
+
 </html>
