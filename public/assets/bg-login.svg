@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #bbcda9;
-      }
-    </style>
-  </defs>
-  <rect class="cls-1" x="-10" y="-7" width="1938" height="1106"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><style>.cls-1{fill:#bbcda9}</style></defs><rect width="1938" height="1106" x="-10" y="-7" class="cls-1"/></svg>
